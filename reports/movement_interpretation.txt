@@ -1,0 +1,12 @@
+
+### Exploratory findings
+
+The observed positive sampling intervals have a median of 592.0 seconds and a 99th percentile of 1811.0 seconds. The one-hour continuity rule retains 441,814 of 441,959 positive intervals (99.97%) and excludes 145 long-gap pairs. The remaining 20 records are terminal fixes without a next observation, not movement steps.
+
+Among retained steps, median geodesic displacement is 11.4 m and median derived average displacement speed is 0.02 m/s. The largest hourly mean step distance occurs at UTC hour 4, while the largest hourly mean derived average speed occurs at UTC hour 4. These are UTC associations only and should not be interpreted as day/night effects without local solar calculations.
+
+Individual median step distances range from 6.0 to 20.1 m. The day with the greatest retained summed step distance is 2017-06-20, with 3391.59 km summed across retained steps. These totals reflect both movement and observation coverage.
+
+### Limitations and uncertainty
+
+Sampling is irregular and individual coverage differs. Long gaps may represent missing transmission, tag scheduling, or unobserved movement; excluding them reduces artificial bridging but does not remove all sampling bias. Geodesic displacement divided by elapsed time is an interval-average speed, not instantaneous flight speed. Review flags identify unusual values for inspection and do not establish measurement error. Repeated steps within individuals require individual-aware statistical models in later work. The public sample covers only the available 2017 records, and no stopover or causal environmental conclusion is supported by this exploratory notebook.

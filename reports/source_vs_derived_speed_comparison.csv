@@ -1,0 +1,6 @@
+metric,value
+paired_records,439290.0
+source_ground_speed_median_m_s,0.745549574074611
+derived_average_speed_median_m_s,0.02335545371083408
+median_derived_minus_source_m_s,-0.5744284754950678
+pearson_correlation,0.6653315601740397

@@ -1,0 +1,12 @@
+metric,value,definition
+positive_intervals,441959,Consecutive within-individual intervals greater than zero.
+retained_steps,441814,Valid within-individual pairs with elapsed time <= 1 hour.
+excluded_no_next_fix,20,Terminal fix for each individual; no next fix exists.
+excluded_long_gap,145,Positive elapsed time greater than 1 hour.
+excluded_invalid_time,0,Nonpositive or invalid elapsed time.
+excluded_invalid_coordinates,0,Coordinate outside WGS84 bounds or missing.
+large_distance_review_flags,442,Step distance above retained 0.999 quantile (13182.24 m).
+high_speed_review_flags,442,Derived average speed above retained 0.999 quantile (18.38 m/s).
+gps_dop_review_flags,29691,Start-fix GPS DOP greater than 5.
+low_satellite_review_flags,0,Start-fix satellite count below 4.
+any_review_flag,30416,At least one transparent review flag.
