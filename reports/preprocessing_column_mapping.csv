@@ -1,0 +1,10 @@
+canonical_field,source_column
+event_id,event-id
+individual_id,individual-local-identifier
+timestamp_utc,timestamp
+longitude,location-long
+latitude,location-lat
+sensor_type,sensor-type
+location_error_m,location-error-numerical
+ground_speed_source,ground-speed
+height_above_msl,height-above-msl

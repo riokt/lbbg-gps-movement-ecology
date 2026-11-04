@@ -1,0 +1,9 @@
+standardized_name,source_column,meaning
+individual_id,individual-local-identifier,Unique individual identifier
+timestamp,timestamp,UTC or GPS-time sensor timestamp
+latitude,location-lat,"WGS84 latitude, decimal degrees"
+longitude,location-long,"WGS84 longitude, decimal degrees"
+sensor_type,sensor-type,Sensor type; observed value is gps
+location_error_m,location-error-numerical,Numerical location uncertainty; documented by source
+ground_speed_m_s,ground-speed,Ground speed; source datapackage units
+height_m,height-above-msl,Height above mean sea level; source datapackage units

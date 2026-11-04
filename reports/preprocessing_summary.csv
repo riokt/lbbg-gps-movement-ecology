@@ -1,0 +1,15 @@
+metric,value
+input_file,/Users/rizqititing/Documents/projects/bird-migration/data/raw/LBBG_SCHIERMONNIKOOG-gps-2017.csv.gz
+input_sha256,da41dcaf3048075049b11dc77033f5911e00ec431a4d673f144619cff1c69d8c
+input_rows,441979
+processed_rows,441979
+excluded_rows,0
+source_columns,22
+processed_columns,38
+individuals,20
+outlier_import_marked_count,0
+outlier_manual_marked_count,0
+not_visible_count,0
+timestamp_min_utc,2017-05-24 09:46:47+00:00
+timestamp_max_utc,2017-12-31 23:58:28+00:00
+transformations,"Added canonical aliases, parsed UTC timestamp, derived UTC calendar fields, sorted rows; retained all source rows."

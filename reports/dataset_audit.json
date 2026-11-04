@@ -1,0 +1,104 @@
+{
+  "rows": 441979,
+  "columns": [
+    "event-id",
+    "visible",
+    "timestamp",
+    "location-long",
+    "location-lat",
+    "bar:barometric-pressure",
+    "external-temperature",
+    "gps:dop",
+    "gps:satellite-count",
+    "gps-time-to-fix",
+    "ground-speed",
+    "heading",
+    "height-above-msl",
+    "import-marked-outlier",
+    "location-error-numerical",
+    "manually-marked-outlier",
+    "vertical-error-numerical",
+    "sensor-type",
+    "individual-taxon-canonical-name",
+    "tag-local-identifier",
+    "individual-local-identifier",
+    "study-name"
+  ],
+  "individual_count": 20,
+  "rows_per_individual": {
+    "5500276": 50116,
+    "5500277": 26361,
+    "5500278": 8699,
+    "5500279": 26302,
+    "5500281": 56329,
+    "5500282": 19490,
+    "5500283": 31704,
+    "5500284": 27906,
+    "5500285": 7736,
+    "5500286": 1943,
+    "5500288": 22497,
+    "5500289": 20283,
+    "5500290": 16635,
+    "5500291": 19079,
+    "5500292": 27366,
+    "5500293": 9672,
+    "5500294": 5663,
+    "5500296": 22353,
+    "5500297": 21485,
+    "GR53097": 20360
+  },
+  "missing_values": {
+    "bar:barometric-pressure": 441979,
+    "ground-speed": 2526,
+    "heading": 2526,
+    "location-error-numerical": 2526,
+    "vertical-error-numerical": 2526
+  },
+  "duplicate_event_ids": 0,
+  "invalid_coordinates": 0,
+  "timestamp_parse_failures": 0,
+  "temporal_coverage_utc": {
+    "min": "2017-05-24 09:46:47.000",
+    "max": "2017-12-31 23:58:28.000"
+  },
+  "coordinate_bounds_wgs84": {
+    "latitude_min": 20.2689251,
+    "latitude_max": 54.6169554,
+    "longitude_min": -17.3586537,
+    "longitude_max": 7.4667676
+  },
+  "generated_utc": "2026-11-04T03:05:07.877860+00:00",
+  "dataset": "LBBG_SCHIERMONNIKOOG",
+  "record_doi": "10.5281/zenodo.20706447",
+  "licence": "CC0",
+  "files": {
+    "LBBG_SCHIERMONNIKOOG-reference-data.csv": {
+      "bytes": 7040,
+      "sha256": "1f452e00c27a929f4da1b57e1480d09a7d647b3cd7fd76b4319a673828a6cc66"
+    },
+    "datapackage.json": {
+      "bytes": 43952,
+      "sha256": "72b0534e5771a6cc2f55c107e8a87a2fabb6c7d4610551c9b6bef24e07ff4301"
+    },
+    "LBBG_SCHIERMONNIKOOG-gps-2017.csv.gz": {
+      "bytes": 22632540,
+      "sha256": "da41dcaf3048075049b11dc77033f5911e00ec431a4d673f144619cff1c69d8c"
+    },
+    ".gitkeep": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "research_feasibility": {
+    "proceed": true,
+    "scope": "Audit GPS fixes first; derive movement steps only after reviewing sampling and outlier fields.",
+    "supported_question": "How do GPS-derived location and movement patterns vary by time of day and individual in the publicly available 2017 sample?",
+    "limitations": [
+      "This snapshot contains one public year, not the full study period.",
+      "The record notes that data collected since 2021 are not public.",
+      "Raw GPS fixes are repeated observations within individuals.",
+      "No causal environmental interpretation is supported by this audit."
+    ]
+  },
+  "datapackage_resource_count": 3
+}
