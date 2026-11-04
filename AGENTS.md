@@ -14,11 +14,20 @@ This is a research portfolio project, not a dashboard or prediction demo. Preser
 - Run tests with `uv run pytest -q`.
 - Run lint checks with `uv run ruff check src tests`.
 - The Jupyter kernel is `bird-migration-intelligence`, displayed as `Bird Migration Intelligence (Python 3.12)`.
-- Execute notebooks from the repository root with the project kernel, for example:
+- Execute notebooks from the repository root with the project kernel. Notebook 02 is the preprocessing example:
 
   ```bash
   uv run jupyter nbconvert --to notebook --execute --inplace \
     notebooks/02_data_preprocessing.ipynb \
+    --ExecutePreprocessor.timeout=600 \
+    --ExecutePreprocessor.kernel_name=bird-migration-intelligence
+  ```
+
+- Notebook 03 is the current exploratory movement-analysis workflow:
+
+  ```bash
+  uv run jupyter nbconvert --to notebook --execute --inplace \
+    notebooks/03_exploratory_movement_analysis.ipynb \
     --ExecutePreprocessor.timeout=600 \
     --ExecutePreprocessor.kernel_name=bird-migration-intelligence
   ```
@@ -28,7 +37,7 @@ Always verify that an executed notebook contains no error outputs and that its p
 ## Data and provenance rules
 
 - Use the existing local files under `data/raw/`; do not silently download another dataset or substitute observation-only data.
-- Raw, interim, processed, and generated data are ignored by Git by default. Never commit raw telemetry, credentials, access tokens, `.env` files, or private data.
+- Raw, interim, processed, and generated data are ignored by Git by default. The derived movement-step Parquet outputs are intentionally committed as reproducible analysis artifacts; raw telemetry and downloaded source files must remain ignored. Never commit credentials, access tokens, `.env` files, or private data.
 - Preserve source columns and source values. Add canonical or derived fields rather than overwriting source fields.
 - Record DOI, repository, licence, authors, file names, hashes where useful, units, coordinate reference system, timestamp convention, and transformations.
 - Do not create a code licence that relicences third-party data. Dataset attribution and licence requirements must remain separate from the code licence.
@@ -46,9 +55,10 @@ Always verify that an executed notebook contains no error outputs and that its p
 
 ## Repository workflow
 
-- Notebook order is sequential: `01_dataset_audit.ipynb`, `02_data_preprocessing.ipynb`, then later analysis notebooks only after the selected data and scope have been reviewed.
+- Notebook order is sequential: `01_dataset_audit.ipynb`, `02_data_preprocessing.ipynb`, and `03_exploratory_movement_analysis.ipynb`. Do not proceed to later analysis notebooks until the selected data, preprocessing decisions, gap threshold, and exploratory scope have been reviewed.
 - Put reusable logic in `src/bird_migration/`; keep notebooks readable and focused on orchestration, explanation, and displayed results.
 - Save reproducible QC tables as CSV under `reports/` and figures under `reports/figures/`.
+- Movement steps must use WGS84 geodesic distance, remain within individual, and preserve long-gap exclusions in a separate dataset. Average displacement speed is not instantaneous flight speed.
 - Do not modify earlier notebooks unless the user explicitly requests it; preserve executed outputs when they document the completed workflow.
 - Before handing off a change, run the relevant notebook, tests, and lint checks, inspect `git diff --check`, and report generated files and validation results.
 - Do not commit or push unless the user explicitly asks for it. Use Conventional Commit messages when asked to commit, such as `feat(preprocessing): add GPS preprocessing workflow` or `fix(audit): correct timestamp validation`.
